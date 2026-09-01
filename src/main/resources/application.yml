@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: casbin-authz-service
+
+authz:
+  casbin:
+    model: classpath:casbin/model.conf
+    policy: classpath:casbin/policy.csv
+  # Vocabulary used to turn wildcard/regex policies into concrete lists
+  # for the "allowed resources" / "allowed actions" endpoints.
+  known-resources:
+    - document
+    - report
+    - invoice
+    - user
+    - audit-log
+  known-actions:
+    - read
+    - write
+    - delete
+    - approve

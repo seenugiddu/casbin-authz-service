@@ -1,0 +1,16 @@
+p, viewer, document, read, allow
+p, viewer, report, read, allow
+p, editor, document, (read|write), allow
+p, editor, report, write, allow
+p, editor, invoice, (read|write), allow
+p, approver, invoice, approve, allow
+p, admin, *, .*, allow
+p, auditor, audit-log, read, allow
+p, auditor, document, read, allow
+p, auditor, report, read, allow
+p, contractor, document, read, allow
+p, contractor, report, read, deny
+
+g, admin, editor
+g, editor, viewer
+g, approver, viewer
